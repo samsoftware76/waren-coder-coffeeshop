@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}CoffeeShopWebsite - HTML Game Platform{% endblock %}
+
+{% block extra_styles %}
+<style>
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 5rem 0 4rem;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 4rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">Welcome to CoffeeShopWebsite</h1>
+    <p class="hero-description">A professional HTML5 game platform for coffee shop website </p>
+    <a href="#features" class="btn btn-light">Learn More</a>
+  </div>
+</section>
+
+<div class="container" id="features">
+    <section class="features">
+        <h2 class="section-title">Key Features</h2>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-bolt" style="color: var(--primary);"></i> Fast & Reliable</h5>
+                        <p class="card-text">Built with performance in mind, our application ensures quick response times and reliable service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Secure</h5>
+                        <p class="card-text">Security is our priority. We implement the latest best practices to keep your data safe.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-mobile-alt" style="color: var(--primary);"></i> Responsive</h5>
+                        <p class="card-text">Access the application from any device - desktop, tablet, or mobile with our fully responsive design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h3>About CoffeeShopWebsite</h3>
+                <p>Our mission is to provide a seamless and intuitive experience for coffee shop website . We focus on creating solutions that are both powerful and easy to use.</p>
+                <p>With our advanced technology and user-centered design, we aim to revolutionize how people interact with coffee shop website .</p>
+                <a href="{{ url_for('about') }}" class="btn btn-outline-primary">More About Us</a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Get Started Today</h4>
+                        <p>Ready to experience the difference? Join thousands of satisfied users who have already discovered the benefits of CoffeeShopWebsite.</p>
+                        <p>Contact us to learn more about how we can help you achieve your goals.</p>
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
