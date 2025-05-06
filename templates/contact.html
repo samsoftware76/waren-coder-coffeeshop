@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Us - CoffeeShopWebsite{% endblock %}
+
+{% block extra_styles %}
+<style>
+.contact-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form .form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.contact-info {
+  background-color: var(--background-light);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="contact-header">
+  <div class="container">
+    <h1 class="contact-title">Contact Us</h1>
+    <p class="contact-description">Feel free to reach out to us with any questions or feedback.</p>
+  </div>
+</section>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="contact-form">
+                <form method="POST" action="{{ url_for('contact') }}">
+                    <div class="form-group mb-3">
+                        <label for="name" class="mb-2">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="mb-2">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="message" class="mb-2">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-2">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="contact-info">
+                <h3 class="mb-4">Our Information</h3>
+                <p class="mb-4">
+                    <strong>Email:</strong> info@coffeeshopwebsite.com<br>
+                    <strong>Phone:</strong> (123) 456-7890<br>
+                    <strong>Address:</strong> 123 Main St, City, Country
+                </p>
+                <h4 class="mb-3">Office Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                   Saturday: 10:00 AM - 2:00 PM<br>
+                   Sunday: Closed</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
